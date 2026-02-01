@@ -1,0 +1,26 @@
+from random import *
+
+def is_valid(n):
+    if not str(n).isdigit():
+        print('enter your number again')
+        return int(input())
+
+
+
+print('Hello its a number guessing game')
+print('enter a number from 1 and what do you want')
+usernum=int(input())
+print('Now try to guess the number from 1 to', usernum , '\n GAME STARTS! \n ENTER THE NUMBER-')
+number=randint(1,usernum)
+guess=0
+total=0
+while guess!=number:
+    guess=int(input())
+    is_valid(guess)
+    total+=1
+    if guess>number:
+        print('number is too big-attempts:',total)
+    elif guess<number:
+        print('number is too small-attemps:',total)
+print('YOU WIN!')
+a=int(input())
